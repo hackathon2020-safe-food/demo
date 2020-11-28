@@ -1,19 +1,19 @@
 # 食为安
 很高兴能够参加华东 Hackathon2020 比赛，先讲下我们队的idea。今年比赛的主题方向为“用数字化为抗疫提效”，所以要做的内容和新冠肺炎疫情相关。国内的防疫措施已经很到位了，最近的多起疫情都和进口冷链食品相关([智利冷冻帝王蟹](http://www.xinhuanet.com/politics/2020-11/28/c_1126796918.htm)、[武汉3份冻品外包装样本核酸阳性](https://weibo.com/3349909324/JvZhV2dlo?type=comment#_rnd1606560320699)、[进口冷冻厄瓜多尔青虾外包装检出一份阳性](http://www.nbd.com.cn/articles/2020-11-25/1556650.html)...)。下馆子的食客们不禁想问，餐桌上的食品安全吗？他们能吃吗？我们的idea就源于此，向顾客说明餐桌上的食品是安全的，此即队名“食为安”的由来。
-![食为安logo][https://github.com/hackathon2020-safe-food/demo/blob/master/pictures/safe_food_logo.png]
+<div align=center><img src="https://s1.imagehub.cc/images/2020/11/28/safe_food_logo.png"/></div>
 
 ## 需求分析
 这个需求可以从多个角度来考虑。对于消费者来说，最近的疫情的确都与进口冷冻食品有关。吃与不吃，这是个问题，显然大家不想“祸从口入”。如果有了食品安全说明，相信大家一定会吃得放心，吃得开心。对于商家来说，有了这个食品安全说明，在一定程度上可以吸引顾客，因为顾客更倾向于对自己的吃食来龙去脉都一清二楚的饭馆。对于政府来说，冷冻食品安全说明与记录有利于疫情防控，国家食品安全标准与监测评估司还专门发布了与冷链食品生产经营的[指南](http://www.nhc.gov.cn/sps/s7887k/202010/ff228979f1534c3abca56559f14ea115.shtml)。由此可见，食品安全记录的重要性。
-![冷链食品安全指南][https://github.com/hackathon2020-safe-food/demo/blob/master/pictures/food_cold_guide.jpg]
+![冷链食品安全指南](https://s1.imagehub.cc/images/2020/11/28/food_cold_guide.jpg)
 
 ## 功能分析
 明确了idea的需求之后，下一步要做的就是功能实现分析。现如今，描述新冠肺炎疫情最常见的工具就是新冠肺炎疫情地图，同时考虑到与通告新冠肺炎患者近期活动路线类似的方法，可以在新冠肺炎地图上可视化冷冻食品的物流运转路线，地图上某个国家、物流运转城市的新冠肺炎疫情统计信息可以通过点击提示或者悬浮提示的形式展现出来，最后再加上食品的检测结果与检测时间。如此一来，就能展示出冷冻食品的“来龙去脉”和安全证明。
 
 关于冷冻食品的物流运转路线，实际物流中应该有记录。但是我们暂未在网络上找到相关数据集，于是根据世界上主要的海洋运输线路，模拟出了某个食品的运输路径。模拟的路径不可避免地存在一些问题，仅用于展示demo。
-![海洋运输路线][https://github.com/hackathon2020-safe-food/demo/blob/master/pictures/routes.png]
+![海洋运输路线](https://s1.imagehub.cc/images/2020/11/28/routes.png)
 
 可视化的疫情动态地图以及冷冻食品运转路线是一个网页，为了实现跳转，可以考虑根据网页链接生成一个二维码，扫描二维码即可跳转。整个食为安项目的框架如下所示。
-![总体框架][https://github.com/hackathon2020-safe-food/demo/blob/master/pictures/structure.png]
+![总体框架](https://s1.imagehub.cc/images/2020/11/28/structure.png)
 
 ## demo演示
 
