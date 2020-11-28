@@ -272,6 +272,7 @@ for i in range(max):
 # 港口port的经纬度保存在字典ports_pos对应的键值对中
 # 国内省会城市provinces_capital的经纬度保存在provinces_table对应的键值对中
 # 国内城市city的经纬度保存在字典cities_table对应的键值对中
+# 国外港口的经纬度保存在ports_foreign_pos的键值对中
 # print('fighting')
 
 # 新增经纬度合并
