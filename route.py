@@ -246,8 +246,11 @@ results = [0, 1]
 probs = [0.95, 0.05]
 # 随机组合，生成运送路线
 routes = []
+# 食物描述
+describes = ['很好吃', '此物最相思', '津津有味', '垂涎欲滴', '麻辣鲜香', '清甜爽口', '肉嫰汤饴', '咸淡适中', \
+            '香气满溢', '色香俱全', '料正味浓', '酸辣双致', '齿颊留香', '菜香盈齿']
 for i in range(max):
-    food = choice(foods)
+    food = choice(foods) + ' ' + str(i)
     foreign = choice(cities_foreign) #国外的某个城市
     cont = country_capital_pos[foreign][3]
     if cont == '亚洲':
@@ -264,9 +267,11 @@ for i in range(max):
         route = [foreign]
         route.extend(route_tochina)
         route.extend([provinces_capital, city])
-    time = randomtimes('2020-11-01 07:00:00','2020-11-17 09:00:00',1)
+    time = randomtimes('2020-03-01 00:00:00','2020-08-01 23:00:00',1)
     result_check = random_pick(results, probs)
-    routes.append((food, route, time, result_check))
+    food_url = 'https://picsum.photos/200/300?random=' + str(i)
+    describe = choice(describes)
+    routes.append((food, route, time, result_check, food_url,describe))
 
 # 国外城市foreign的经纬度保存在字典country_capital_pos对应的键值对中
 # 港口port的经纬度保存在字典ports_pos对应的键值对中
@@ -287,5 +292,26 @@ for key in cities_table:
     point_latlong[key] = cities_table[key][1]
 for key in ports_foreign_pos:
     point_latlong[key] = ports_foreign_pos[key]
-for i in range(len(routes)):
-    print(routes[i])
+
+# for i in range(len(routes)):
+#     print(routes[i])
+
+# 另存为json文件，point_latlong存放地图上某个点与其经纬度的对应关系
+# routes存放某个食品对应的信息'food, route, time, result_check, food_url,describe'
+point_latlong_json = js.dumps(point_latlong, indent=2, ensure_ascii=False) 
+with open('point_latlong.json', "w", encoding='utf-8') as f:
+    f.write(point_latlong_json)
+
+# route路线处理
+# for info in routes:
+#     routes_dict[info[0]] = (info[1], info[2], info[3], info[4], info[5])
+food_name = [info[0] for info in routes]
+routes_info = [info[1] for info in routes]
+time = [info[2] for info in routes]
+is_safe = [info[3] for info in routes]
+food_url = [info[4] for info in routes]
+describe = [info[5] for info in routes]
+routes_dict = {"food_name": food_name, "routes":routes_info, "time":time, "is_safe": is_safe, "food_url":food_url, "describe":describe}
+routes_json = js.dumps(routes_dict, indent=2, ensure_ascii=False)
+with open('routes.json', "w", encoding='utf-8') as f:
+    f.write(routes_json)
