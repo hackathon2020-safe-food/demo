@@ -284,5 +284,7 @@ for key in provinces_table:
     point_latlong[key] = provinces_table[key][1]
 for key in cities_table:
     point_latlong[key] = cities_table[key][1]
+for key in ports_foreign_pos:
+    point_latlong[key] = ports_foreign_pos[key]
 for i in range(len(routes)):
     print(routes[i])
