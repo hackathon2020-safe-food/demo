@@ -16,7 +16,10 @@
 ![总体框架](https://s1.imagehub.cc/images/2020/11/29/structure.png)
 
 ## demo演示
-
+![database.jpg](https://s1.imagehub.cc/images/2020/11/29/database.jpg)
+![website1.png](https://s1.imagehub.cc/images/2020/11/29/website1.png)
+![website2.jpg](https://s1.imagehub.cc/images/2020/11/29/website2.jpg)
+![website3.jpg](https://s1.imagehub.cc/images/2020/11/29/website3.jpg)
 
 ## 商业前景
 * 在疫情的大环境下，消费者可以了解自己吃了什么，让消费者吃得安心。
